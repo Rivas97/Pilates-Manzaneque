@@ -13,8 +13,7 @@ var app = {
   },
 
   iniciaBotones: function(){
-    var entrar = document.querySelector('#entrar');
-    entrar.addEventListener('click', this.login, false);
+
 
     var dia1 = document.querySelector('#dia1');
     dia1.addEventListener('click', function(){app.grupo('dia1');},false);
