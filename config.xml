@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.phonegap.pilates" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>Pilates Manzaneque</name>
+    <description>
+        Aplicación del Studio Pilates Manzaneque.
+    </description>
+    <author email="fernando.riv.m@gmail.com" href="http://pilatesmanzaneque.es">
+        Devscola
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <icon src="icon.png">
+</widget>

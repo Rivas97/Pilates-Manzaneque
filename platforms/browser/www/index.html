@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+
+      <script type="text/javascript" src="cordova.js"></script>
+      <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+      <script type="text/javascript" src="js/index.js"></script>
+      <link rel="stylesheet" type="text/css" href="css/pilates.css" />
+      <title> Pilates</title>
+   </head>
+
+   <body>
+
+   <div class="header">
+      <h1> Studio Pilates Manzaneque </h1>
+   </div>
+
+   <div class="login" id="login">
+      <input class="user" type="text" name="user" id="user" placeholder="usuario">
+      <br>
+      <input class="password" type="password" name="password" id="password" placeholder="contraseña">
+      <br>
+      <button class="entrar" id = "entrar">Entrar</button>
+   </div>
+
+   <div class="horarios" id="horarios">
+      <h2 id="bienvenido"></h2>
+      <a href="" id ="dia1" ></a>
+      <br>
+      <a href="" id ="dia2" ></a>
+      <br>
+      <a href="" id ="dia3" ></a>
+      <br>
+      <a href="" id ="dia4" ></a>
+      <br>
+      <button class="ver" id="ver"> Ver todos los horarios </button>
+   </div>
+
+   <div class="grupo" id="grupo">
+   <h4 id = "hora"></h4>
+   <p id = "pert"></p>
+   <p id ="plazas"></p>
+   <p id ="mens"></p>
+   <br>
+   <button class="add" id="add"> Añadirme a este grupo </button>
+   <br>
+   <button class="salir" id="salir"> Salir de este grupo </button>
+   <br>
+   <button class="volver" id="volver"> Volver </button>
+   </div>
+
+   <button class="logout" id="logout"> Cerrar Sesión </button>   
+
+<div class="tabla" id = "tabla">
+<table>
+<tbody>
+<tr>
+<td>&nbsp;</td>
+<td><strong> Lunes </strong></td>
+<td><strong> Martes </strong></td>
+<td><strong> Miércoles </strong></td>
+<td><strong> Jueves </strong></td>
+</tr>
+<tr>
+<td><strong> 8:30 </strong></td>
+<td onclick ="app.tabla('L(08:30)')"><a href="http://pilatesmanzaneque.es/index.php/editar-horarios/?diahora=L(08:30)">Mattwork</a></td>
+<td onclick ="app.tabla('M(08:30)')"><a href="http://pilatesmanzaneque.es/index.php/editar-horarios/?diahora=M(08:30)">Reformer</a></td>
+<td onclick ="app.tabla('X(08:30)')"><a href="http://pilatesmanzaneque.es/index.php/editar-horarios/?diahora=X(08:30)">Columpio</a></td>
+<td onclick ="app.tabla('J(08:30)')"><a href="http://pilatesmanzaneque.es/index.php/editar-horarios/?diahora=J(08:30)">Mattwork</a></td>
+</tr>
+<tr>
+<td><strong> 9:30 </strong></td>
+<td onclick ="app.tabla('L(09:30)')"><a href="http://pilatesmanzaneque.es/index.php/editar-horarios/?diahora=L(09:30)">Mattwork</a></td>
+<td onclick ="app.tabla('M(09:30)')"><a href="http://pilatesmanzaneque.es/index.php/editar-horarios/?diahora=M(09:30)">Reformer</a></td>
+<td onclick ="app.tabla('X(09:30)')"><a href="http://pilatesmanzaneque.es/index.php/editar-horarios/?diahora=X(09:30)">Reformer/Columpio</a></td>
+<td onclick ="app.tabla('J(09:30)')"><a href="http://pilatesmanzaneque.es/index.php/editar-horarios/?diahora=J(09:30)">Mattwork</a></td>
+</tr>
+<tr>
+<td><strong> 10:30 </strong></td>
+<td onclick ="app.tabla('L(10:30)')"><a href="http://pilatesmanzaneque.es/index.php/editar-horarios/?diahora=L(10:30)">Reformer</a></td>
+<td onclick ="app.tabla('M(10:30)')"><a href="http://pilatesmanzaneque.es/index.php/editar-horarios/?diahora=M(10:30)">Reformer</a></td>
+<td onclick ="app.tabla('X(10:30)')"><a href="http://pilatesmanzaneque.es/index.php/editar-horarios/?diahora=X(10:30)">Mattwork</a></td>
+<td onclick ="app.tabla('J(10:30)')"><a href="http://pilatesmanzaneque.es/index.php/editar-horarios/?diahora=J(10:30)">Columpio</a></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><strong> 17:00 </strong></td>
+<td onclick ="app.tabla('L(17:00)')"><a href="http://pilatesmanzaneque.es/index.php/editar-horarios/?diahora=L(17:00)">Mattwork</a></td>
+<td onclick ="app.tabla('M(17:00)')"><a href="http://pilatesmanzaneque.es/index.php/editar-horarios/?diahora=M(17:00)">Reformer</a></td>
+<td onclick ="app.tabla('X(17:00)')"><a href="http://pilatesmanzaneque.es/index.php/editar-horarios/?diahora=X(17:00)">Reformer</a></td>
+<td onclick ="app.tabla('J(17:00)')"><a href="http://pilatesmanzaneque.es/index.php/editar-horarios/?diahora=J(17:00)">Mattwork</a></td>
+</tr>
+<tr>
+<td><strong> 18:00 </strong></td>
+<td onclick ="app.tabla('L(18:00)')"><a href="http://pilatesmanzaneque.es/index.php/editar-horarios/?diahora=L(18:00)">Reformer</a></td>
+<td onclick ="app.tabla('M(18:00)')"><a href="http://pilatesmanzaneque.es/index.php/editar-horarios/?diahora=M(18:00)">Reformer</a></td>
+<td onclick ="app.tabla('X(18:00)')"><a href="http://pilatesmanzaneque.es/index.php/editar-horarios/?diahora=X(18:00)">Hipopresivos</a></td>
+<td onclick ="app.tabla('J(18:00)')"><a href="http://pilatesmanzaneque.es/index.php/editar-horarios/?diahora=J(18:00)">Mattwork</a></td>
+</tr>
+<tr>
+<td><strong> 19:00 </strong></td>
+<td onclick ="app.tabla('L(19:00)')"><a href="http://pilatesmanzaneque.es/index.php/editar-horarios/?diahora=L(19:00)">Mattwork</a></td>
+<td onclick ="app.tabla('M(19:00)')"><a href="http://pilatesmanzaneque.es/index.php/editar-horarios/?diahora=M(19:00)">Reformer/Columpio</a></td>
+<td onclick ="app.tabla('X(19:00)')"><a href="http://pilatesmanzaneque.es/index.php/editar-horarios/?diahora=X(19:00)">Reformer/Columpio</a></td>
+<td onclick ="app.tabla('J(19:00)')"><a href="http://pilatesmanzaneque.es/index.php/editar-horarios/?diahora=J(19:00)">Mattwork</a></td>
+</tr>
+<tr>
+<td><strong> 20:30 </strong></td>
+<td onclick ="app.tabla('L(20:30)')"><a href="http://pilatesmanzaneque.es/index.php/editar-horarios/?diahora=L(20:30)">Mattwork</a></td>
+<td onclick ="app.tabla('M(20:30)')"><a href="http://pilatesmanzaneque.es/index.php/editar-horarios/?diahora=M(20:30)">Reformer/Columpio</a></td>
+<td onclick ="app.tabla('X(20:30)')"><a href="http://pilatesmanzaneque.es/index.php/editar-horarios/?diahora=X(20:30)">Reformer/Columpio</a></td>
+<td onclick ="app.tabla('J(20:30)')"><a href="http://pilatesmanzaneque.es/index.php/editar-horarios/?diahora=J(20:30)">Mattwork</a></td>
+</tr>
+<tr>
+<td><strong> 21:30 </strong></td>
+<td onclick ="app.tabla('L(21:30)')"><a href="http://pilatesmanzaneque.es/index.php/editar-horarios/?diahora=L(21:30)">Mattwork</a></td>
+<td>&nbsp;</td>
+<td onclick ="app.tabla('X(21:30)')"><a href="http://pilatesmanzaneque.es/index.php/editar-horarios/?diahora=X(21:30)">Reformer/Columpio</a></td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+
+<button class="back" id="back"> Volver </button>
+
+</div>
+
+
+
+   </body>
+</html>
