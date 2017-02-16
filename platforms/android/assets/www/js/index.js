@@ -9,6 +9,8 @@ var app = {
 
     if (user != null){
       app.horario(user,password);
+    } else {
+      document.getElementById("login").style.display = "block";
     }
   },
 
@@ -71,16 +73,16 @@ var app = {
               if (data.usuario){
                 document.getElementById("bienvenido").innerHTML = "Bienvenid@ " +data.nombre + " " + data.apellido;
                 document.getElementById("dia1").innerHTML = app.dia(data.diahora1);
-                document.getElementById("dia1").href = app.link(data.diahora1,user);
+                document.getElementById("dia1").title = app.link(data.diahora1,user);
 
                 document.getElementById("dia2").innerHTML = app.dia(data.diahora2);
-                document.getElementById("dia2").href = app.link(data.diahora2,user);
+                document.getElementById("dia2").title = app.link(data.diahora2,user);
 
                 document.getElementById("dia3").innerHTML = app.dia(data.diahora3);
-                document.getElementById("dia3").href = app.link(data.diahora3,user);
+                document.getElementById("dia3").title = app.link(data.diahora3,user);
 
                 document.getElementById("dia4").innerHTML = app.dia(data.diahora4);
-                document.getElementById("dia4").href = app.link(data.diahora4,user);
+                document.getElementById("dia4").title = app.link(data.diahora4,user);
 
                 document.getElementById("login").style.display = "none";
                 document.getElementById("grupo").style.display = "none";
@@ -126,7 +128,7 @@ var app = {
 
   grupo: function(dia){
     var hora = document.getElementById(dia).innerHTML;
-    var peticion = document.getElementById(dia).href ;
+    var peticion = document.getElementById(dia).title ;
 
     $.getJSON(peticion,function(data){
         console.log(JSON.stringify(data));
@@ -138,6 +140,8 @@ var app = {
 
           if (data.pert == 1){
             document.getElementById("pert").innerHTML = "Ya pertenece a este grupo";
+          } else {
+            document.getElementById("pert").innerHTML = "";
           }
 
 
@@ -263,6 +267,8 @@ var app = {
 
           if (data.pert == 1){
             document.getElementById("pert").innerHTML = "Ya pertenece a este grupo";
+          } else {
+            document.getElementById("pert").innerHTML = "";
           }
 
 
