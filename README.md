@@ -1,4 +1,4 @@
-# Juego demostracion de las capacidades del acelerometro
+# Aplicación del Studio Pilates Manzaneque
 
 ## Usage
 
