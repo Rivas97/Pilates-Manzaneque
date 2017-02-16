@@ -35,7 +35,8 @@ module.exports.metadata =
 // TOP OF METADATA
 {
     "cordova-plugin-calendar": "4.5.5",
-    "cordova-plugin-device-motion": "1.2.2"
+    "cordova-plugin-device-motion": "1.2.2",
+    "cordova-plugin-whitelist": "1.3.1"
 }
 // BOTTOM OF METADATA
 });
