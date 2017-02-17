@@ -8,13 +8,14 @@
       <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
       <script type="text/javascript" src="js/index.js"></script>
       <link rel="stylesheet" type="text/css" href="css/pilates.css" />
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
       <title> Pilates</title>
    </head>
 
    <body>
 
-   <div class="header">
-      <h1> Studio Pilates Manzaneque </h1>
+   <div class="header" id = "header" >
+      <h1 class ="titulo">  <img src ="assets/icon-mini.png">  Studio Pilates Manzaneque  </h1>
    </div>
 
    <div class="login" id="login">
@@ -36,10 +37,11 @@
       <a href="javascript:null()" id ="dia4" title = ""></a>
       <br>
       <button class="ver" id="ver"> Ver todos los horarios </button>
+      <button class="logout" id="logout"> Cerrar Sesión </button> 
    </div>
 
    <div class="grupo" id="grupo">
-   <h4 id = "hora"></h4>
+   <h3 id = "hora"></h3>
    <p id = "pert"></p>
    <p id ="plazas"></p>
    <p id ="mens"></p>
@@ -50,18 +52,17 @@
    <br>
    <button class="volver" id="volver"> Volver </button>
    </div>
-
-   <button class="logout" id="logout"> Cerrar Sesión </button>   
+  
 
 <div class="tabla" id = "tabla">
 <table>
 <tbody>
 <tr>
-<td>&nbsp;</td>
-<td><strong> Lunes </strong></td>
-<td><strong> Martes </strong></td>
-<td><strong> Miércoles </strong></td>
-<td><strong> Jueves </strong></td>
+<td>&nbsp; </td>
+<td><strong> &nbsp; &nbsp; &nbsp;  Lunes </strong></td>
+<td><strong> &nbsp; &nbsp; &nbsp; Martes </strong></td>
+<td><strong> &nbsp; &nbsp; &nbsp; Miércoles </strong></td>
+<td><strong> &nbsp; &nbsp; &nbsp; Jueves </strong></td>
 </tr>
 <tr>
 <td><strong> 8:30 </strong></td>
@@ -133,6 +134,128 @@
 
 </div>
 
+<div class="tabla1" id = "tabla1">
+
+<table class="table1">
+<tbody>
+<tr>
+<td>&nbsp; </td>
+<td><strong> &nbsp; &nbsp; &nbsp;  Lunes </strong></td>
+<td><strong> &nbsp; &nbsp; &nbsp; Martes </strong></td>
+</tr>
+<tr>
+<td><strong> 8:30 </strong></td>
+<td onclick ="app.tabla('L(08:30)')"><a href="javascript:null()">Mattwork</a></td>
+<td onclick ="app.tabla('M(08:30)')"><a href="javascript:null()">Reformer</a></td>
+</tr>
+<tr>
+<td><strong> 9:30 </strong></td>
+<td onclick ="app.tabla('L(09:30)')"><a href="javascript:null()">Mattwork</a></td>
+<td onclick ="app.tabla('M(09:30)')"><a href="javascript:null()">Reformer</a></td>
+</tr>
+<tr>
+<td><strong> 10:30 </strong></td>
+<td onclick ="app.tabla('L(10:30)')"><a href="javascript:null()">Reformer</a></td>
+<td onclick ="app.tabla('M(10:30)')"><a href="javascript:null()">Reformer</a></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><strong> 17:00 </strong></td>
+<td onclick ="app.tabla('L(17:00)')"><a href="javascript:null()"">Mattwork</a></td>
+<td onclick ="app.tabla('M(17:00)')"><a href="javascript:null()">Reformer</a></td>
+</tr>
+<tr>
+<td><strong> 18:00 </strong></td>
+<td onclick ="app.tabla('L(18:00)')"><a href="javascript:null()">Reformer</a></td>
+<td onclick ="app.tabla('M(18:00)')"><a href="javascript:null()">Reformer</a></td>
+</tr>
+<tr>
+<td><strong> 19:00 </strong></td>
+<td onclick ="app.tabla('L(19:00)')"><a href="javascript:null()">Mattwork</a></td>
+<td onclick ="app.tabla('M(19:00)')"><a href="javascript:null()">Reformer/Columpio</a></td>
+</tr>
+<tr>
+<td><strong> 20:30 </strong></td>
+<td onclick ="app.tabla('L(20:30)')"><a href="javascript:null()">Mattwork</a></td>
+<td onclick ="app.tabla('M(20:30)')"><a href="javascript:null()">Reformer/Columpio</a></td>
+</tr>
+<tr>
+<td><strong> 21:30 </strong></td>
+<td onclick ="app.tabla('L(21:30)')"><a href="javascript:null()">Mattwork</a></td>
+</tr>
+</tbody>
+</table>
+
+<button class="back" onclick="app.volver();"> Volver </button>
+<button class="pasar" onclick="app.siguiente();""> Siguiente </button>
+
+</div>
+
+<div class="tabla2" id = "tabla2">
+<table>
+<tbody>
+<tr>
+<td>&nbsp; </td>
+<td><strong> &nbsp; &nbsp; &nbsp; Miércoles </strong></td>
+<td><strong> &nbsp; &nbsp; &nbsp; Jueves </strong></td>
+</tr>
+<tr>
+<td><strong> 8:30 </strong></td>
+<td onclick ="app.tabla('X(08:30)')"><a href="javascript:null()">Columpio</a></td>
+<td onclick ="app.tabla('J(08:30)')"><a href="javascript:null()">Mattwork</a></td>
+</tr>
+<tr>
+<td><strong> 9:30 </strong></td>
+<td onclick ="app.tabla('X(09:30)')"><a href="javascript:null()">Reformer/Columpio</a></td>
+<td onclick ="app.tabla('J(09:30)')"><a href="javascript:null()"">Mattwork</a></td>
+</tr>
+<tr>
+<td><strong> 10:30 </strong></td>
+<td onclick ="app.tabla('X(10:30)')"><a href="javascript:null()">Mattwork</a></td>
+<td onclick ="app.tabla('J(10:30)')"><a href="javascript:null()">Columpio</a></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><strong> 17:00 </strong></td>
+<td onclick ="app.tabla('X(17:00)')"><a href="javascript:null()">Reformer</a></td>
+<td onclick ="app.tabla('J(17:00)')"><a href="javascript:null()">Mattwork</a></td>
+</tr>
+<tr>
+<td><strong> 18:00 </strong></td>
+<td onclick ="app.tabla('X(18:00)')"><a href="javascript:null()">Hipopresivos</a></td>
+<td onclick ="app.tabla('J(18:00)')"><a href="javascript:null()">Mattwork</a></td>
+</tr>
+<tr>
+<td><strong> 19:00 </strong></td>
+<td onclick ="app.tabla('X(19:00)')"><a href="javascript:null()">Reformer/Columpio</a></td>
+<td onclick ="app.tabla('J(19:00)')"><a href="javascript:null()">Mattwork</a></td>
+</tr>
+<tr>
+<td><strong> 20:30 </strong></td>
+<td onclick ="app.tabla('X(20:30)')"><a href="javascript:null()">Reformer/Columpio</a></td>
+<td onclick ="app.tabla('J(20:30)')"><a href="javascript:null()">Mattwork</a></td>
+</tr>
+<tr>
+<td><strong> 21:30 </strong></td>
+<td onclick ="app.tabla('X(21:30)')"><a href="javascript:null()">Reformer/Columpio</a></td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+
+<button class="back" onclick="app.volver();"> Volver </button>
+<button class="pasar" onclick="app.anterior();""> Anterior </button>
+
+
+</div>
 
 
    </body>

@@ -4,14 +4,27 @@ var app = {
   inicio: function() {
 
     this.iniciaBotones();
+    this.iniciaHeader();
     var user = window.localStorage.getItem("user");
     var password = window.localStorage.getItem("password");
+    window.addEventListener('orientationchange',  app.rotacion(),  false); 
 
     if (user != null){
       app.horario(user,password);
     } else {
       document.getElementById("login").style.display = "block";
     }
+  },
+
+  iniciaHeader: function() {
+    var ancho = document.documentElement.clientWidth;
+
+    if (ancho <= 500) {
+        document.getElementById("header").className = "header";
+    }else{
+        document.getElementById("header").className = "header-big";
+    }
+
   },
 
   iniciaBotones: function(){
@@ -89,6 +102,9 @@ var app = {
                 document.getElementById("horarios").style.display = "block";
                 document.getElementById("logout").style.display = "block";
                 document.getElementById("tabla").style.display = "none";
+                document.getElementById("tabla1").style.display = "none";
+                document.getElementById("tabla1").style.display = "none";
+                document.getElementById('tabla2').style.display ='none';
 
               } else{
                 alert("Usuario o contraseña incorrectos");
@@ -144,6 +160,10 @@ var app = {
             document.getElementById("pert").innerHTML = "";
           }
 
+          if (data.plazas <= 0 ) {
+            document.getElementById("add").style.visibility = "hidden";
+          }
+
 
         });
     });
@@ -152,6 +172,8 @@ var app = {
     document.getElementById("grupo").style.display = "block";
     document.getElementById("logout").style.display = "none";
     document.getElementById("tabla").style.display = "none";
+    document.getElementById("tabla1").style.display = "none";
+    document.getElementById('tabla2').style.display ='none';
   },
 
   volver: function(){
@@ -272,6 +294,11 @@ var app = {
           }
 
 
+          if (data.plazas <= 0 ) {
+            document.getElementById("add").style.visibility = "hidden";
+          }
+
+
         });
     });
 
@@ -279,13 +306,44 @@ var app = {
     document.getElementById("grupo").style.display = "block";
     document.getElementById("logout").style.display = "none";
     document.getElementById("tabla").style.display = "none";
+    document.getElementById("tabla1").style.display = "none";
+    document.getElementById('tabla2').style.display ='none';
    },
 
    ver: function() {
-    document.getElementById("tabla").style.display = "block";
+    ancho = document.documentElement.clientWidth;
+
+    if (ancho <= 500) {
+        document.getElementById("tabla1").style.display = "block";
+    }else{
+        document.getElementById("tabla").style.display = "block";
+    }
     document.getElementById("horarios").style.display = "none";
     document.getElementById("grupo").style.display = "none";
     document.getElementById("logout").style.display = "none";
+   },
+
+   siguiente: function() {
+      document.getElementById('tabla1').style.display ='none';
+      document.getElementById('tabla2').style.display ='block';
+   },
+
+   anterior: function() {
+    document.getElementById('tabla1').style.display ='block';
+    document.getElementById('tabla2').style.display ='none';
+   },
+
+   rotacion: function () {
+    var ancho = document.documentElement.clientWidth;
+    var header = document.getElementById("header").className;
+
+    if (ancho <=500 && header == "header") {
+      document.getElementById("header").className = "header-big";
+    } else if (ancho <= 500 && header == "header-big")  {
+      document.getElementById("header").className= "header";
+    }
+
+
    }
 
 };
