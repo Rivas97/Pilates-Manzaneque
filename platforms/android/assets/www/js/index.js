@@ -7,6 +7,8 @@ var app = {
     this.iniciaHeader();
     var user = window.localStorage.getItem("user");
     var password = window.localStorage.getItem("password");
+    window.addEventListener('orientationchange',  app.rotacion(),  false); 
+    document.addEventListener("offline", app.conexion(), false);
 
     if (user != null){
       app.horario(user,password);
@@ -15,13 +17,17 @@ var app = {
     }
   },
 
+  conexion: function() {
+    alert('Ups, parece que no hay conexion a internet');
+  },
+
   iniciaHeader: function() {
-    ancho = document.documentElement.clientWidth;
+    var ancho = document.documentElement.clientWidth;
 
     if (ancho <= 500) {
         document.getElementById("header").className = "header";
     }else{
-        document.getElementById("header").style.display = "header-big";
+        document.getElementById("header").className = "header-big";
     }
 
   },
@@ -330,6 +336,19 @@ var app = {
    anterior: function() {
     document.getElementById('tabla1').style.display ='block';
     document.getElementById('tabla2').style.display ='none';
+   },
+
+   rotacion: function () {
+    var ancho = document.documentElement.clientWidth;
+    var header = document.getElementById("header").className;
+
+    if (ancho <=500 && header == "header") {
+      document.getElementById("header").className = "header-big";
+    } else if (ancho <= 500 && header == "header-big")  {
+      document.getElementById("header").className= "header";
+    }
+
+
    }
 
 };
