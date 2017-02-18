@@ -8,17 +8,13 @@ var app = {
     var user = window.localStorage.getItem("user");
     var password = window.localStorage.getItem("password");
     window.addEventListener('orientationchange',  app.rotacion(),  false); 
-    document.addEventListener("offline", app.conexion(), false);
+  
 
     if (user != null){
       app.horario(user,password);
     } else {
       document.getElementById("login").style.display = "block";
     }
-  },
-
-  conexion: function() {
-    alert('Ups, parece que no hay conexion a internet');
   },
 
   iniciaHeader: function() {
@@ -359,7 +355,13 @@ if ('addEventListener' in document) {
   }, false);
 };
 
+document.addEventListener("offline", function(){
+  alert('Ups, parece que no hay conexión a internet');
+}, false);
 
+document.addEventListener("backbutton", function(){
+  app.volver();
+}, false);
 
 
 
