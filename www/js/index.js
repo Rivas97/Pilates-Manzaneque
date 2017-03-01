@@ -110,6 +110,7 @@ var app = {
               } else{
                 alert("Usuario o contraseña incorrectos");
                 document.getElementById("password").value = "";
+                window.localStorage.clear();
               } 
 
           });
