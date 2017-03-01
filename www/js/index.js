@@ -108,9 +108,9 @@ var app = {
                 document.getElementById('tabla2').style.display ='none';
 
               } else{
+              	window.localStorage.clear();
                 alert("Usuario o contraseña incorrectos");
                 document.getElementById("password").value = "";
-                window.localStorage.clear();
               } 
 
           });
