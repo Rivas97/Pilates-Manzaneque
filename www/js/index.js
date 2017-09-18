@@ -62,6 +62,11 @@ var app = {
     var ver = document.querySelector("#ver");
     ver.addEventListener('click', this.ver,false);
 
+    var forgot = document.querySelector("#forgot");
+    forgot.addEventListener('click', function(){
+      alert("Para recuperar su contraseña, entre en www.pilatesmanzaneque.es");
+    },false);
+
   },
 
   login: function() {
