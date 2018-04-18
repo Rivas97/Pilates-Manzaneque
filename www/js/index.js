@@ -169,6 +169,8 @@ var app = {
 
           if (data.plazas <= 0 ) {
             document.getElementById("add").style.visibility = "hidden";
+          } else {
+          	document.getElementById("add").style.visibility = "visible";
           }
 
 
@@ -303,6 +305,8 @@ var app = {
 
           if (data.plazas <= 0 ) {
             document.getElementById("add").style.visibility = "hidden";
+          } else {
+          	document.getElementById("add").style.visibility = "visible";
           }
 
 
