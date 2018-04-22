@@ -7,8 +7,8 @@ var app = {
     this.iniciaHeader();
     var user = window.localStorage.getItem("user");
     var password = window.localStorage.getItem("password");
-    window.addEventListener('orientationchange',  app.rotacion(),  false); 
-  
+    window.addEventListener('orientationchange',  app.rotacion(),  false);
+
 
     if (user != null){
       app.horario(user,password);
@@ -77,7 +77,7 @@ var app = {
     window.localStorage.setItem("user",user);
     window.localStorage.setItem("password",password);
 
-    app.horario(user,password); 
+    app.horario(user,password);
   },
 
 
@@ -116,7 +116,7 @@ var app = {
               	window.localStorage.clear();
                 alert("Usuario o contraseña incorrectos");
                 document.getElementById("password").value = "";
-              } 
+              }
 
           });
       });
@@ -258,7 +258,7 @@ var app = {
 
 
    diahora: function(horario) {
-    var n = horario.length; 
+    var n = horario.length;
     var start = n-6;
     var begin = n-5;
 
@@ -372,7 +372,3 @@ document.addEventListener("offline", function(){
 document.addEventListener("backbutton", function(){
   app.volver();
 }, false);
-
-
-
-
