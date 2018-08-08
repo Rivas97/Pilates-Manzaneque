@@ -4,10 +4,9 @@ var app = {
   inicio: function() {
 
     this.iniciaBotones();
-    this.iniciaHeader();
     var user = window.localStorage.getItem("user");
     var password = window.localStorage.getItem("password");
-    window.addEventListener('orientationchange',  app.rotacion(),  false);
+    //window.addEventListener('orientationchange',  app.rotacion(),  false);
 
 
     if (user != null){
@@ -17,7 +16,7 @@ var app = {
     }
   },
 
-  iniciaHeader: function() {
+  /*iniciaHeader: function() {
     var ancho = document.documentElement.clientWidth;
 
     if (ancho <= 500) {
@@ -26,7 +25,7 @@ var app = {
         document.getElementById("header").className = "header-big";
     }
 
-  },
+  },*/
 
   iniciaBotones: function(){
     var entrar = document.querySelector('#entrar');
@@ -62,6 +61,12 @@ var app = {
     var ver = document.querySelector("#ver");
     ver.addEventListener('click', this.ver,false);
 
+    var cuenta = document.querySelector("#cuenta");
+    cuenta.addEventListener('click', this.cuenta, false);
+
+    var out = document.querySelector("#out");
+    out.addEventListener('click', this.out, false);
+
     var forgot = document.querySelector("#forgot");
     forgot.addEventListener('click', function(){
       alert("Para recuperar su contraseña, entre en www.pilatesmanzaneque.es");
@@ -90,23 +95,46 @@ var app = {
 
           $(data).each(function(index, data) {
               if (data.usuario){
-                document.getElementById("bienvenido").innerHTML = "Bienvenid@ " +data.nombre + " " + data.apellido;
+                document.getElementById("bienvenido").innerHTML = "Hola " +data.nombre + " " + data.apellido;
+
+                if(data.diahora1 =="") {
+                  document.getElementById("dia1").style.display = "none";
+                } else{
+                  document.getElementById("dia1").style.display = "block";
+                }
                 document.getElementById("dia1").innerHTML = app.dia(data.diahora1);
                 document.getElementById("dia1").title = app.link(data.diahora1,user);
 
+                if(data.diahora2 =="") {
+                  document.getElementById("dia2").style.display = "none";
+                } else{
+                  document.getElementById("dia2").style.display = "block";
+                }
                 document.getElementById("dia2").innerHTML = app.dia(data.diahora2);
                 document.getElementById("dia2").title = app.link(data.diahora2,user);
 
+
+                if(data.diahora3 =="") {
+                  document.getElementById("dia3").style.display = "none";
+                } else{
+                  document.getElementById("dia3").style.display = "block";
+                }
                 document.getElementById("dia3").innerHTML = app.dia(data.diahora3);
                 document.getElementById("dia3").title = app.link(data.diahora3,user);
 
+
+                if(data.diahora4 =="") {
+                  document.getElementById("dia4").style.display = "none";
+                } else{
+                  document.getElementById("dia4").style.display = "block";
+                }
                 document.getElementById("dia4").innerHTML = app.dia(data.diahora4);
                 document.getElementById("dia4").title = app.link(data.diahora4,user);
 
                 document.getElementById("login").style.display = "none";
                 document.getElementById("grupo").style.display = "none";
                 document.getElementById("horarios").style.display = "block";
-                document.getElementById("logout").style.display = "block";
+                document.getElementById("exit").style.display = "none";
                 document.getElementById("tabla").style.display = "none";
                 document.getElementById("tabla1").style.display = "none";
                 document.getElementById("tabla1").style.display = "none";
@@ -179,7 +207,7 @@ var app = {
 
     document.getElementById("horarios").style.display = "none";
     document.getElementById("grupo").style.display = "block";
-    document.getElementById("logout").style.display = "none";
+    document.getElementById("exit").style.display = "none";
     document.getElementById("tabla").style.display = "none";
     document.getElementById("tabla1").style.display = "none";
     document.getElementById('tabla2').style.display ='none';
@@ -197,7 +225,7 @@ var app = {
 
     document.getElementById("login").style.display = "block";
     document.getElementById("horarios").style.display = "none";
-    document.getElementById("logout").style.display = "none";
+    document.getElementById("exit").style.display = "none";
     document.getElementById("user").value = "";
     document.getElementById("password").value = "";
    },
@@ -315,23 +343,56 @@ var app = {
 
     document.getElementById("horarios").style.display = "none";
     document.getElementById("grupo").style.display = "block";
-    document.getElementById("logout").style.display = "none";
+    document.getElementById("exit").style.display = "none";
     document.getElementById("tabla").style.display = "none";
     document.getElementById("tabla1").style.display = "none";
     document.getElementById('tabla2').style.display ='none';
    },
 
    ver: function() {
-    ancho = document.documentElement.clientWidth;
 
-    if (ancho <= 500) {
-        document.getElementById("tabla1").style.display = "block";
-    }else{
-        document.getElementById("tabla").style.display = "block";
-    }
-    document.getElementById("horarios").style.display = "none";
-    document.getElementById("grupo").style.display = "none";
-    document.getElementById("logout").style.display = "none";
+    if (window.localStorage.getItem("user") != null){
+        ancho = document.documentElement.clientWidth;
+
+        if (ancho <= 500) {
+            document.getElementById("tabla1").style.display = "block";
+        }else{
+            document.getElementById("tabla").style.display = "block";
+        }
+        document.getElementById("horarios").style.display = "none";
+        document.getElementById("grupo").style.display = "none";
+        document.getElementById("exit").style.display = "none";
+      } else {
+        alert('Debe iniciar sesión para ver los horarios');
+      }
+   },
+
+   cuenta: function(){
+        if(window.localStorage.getItem("user") != null){
+                document.getElementById("login").style.display = "none";
+                document.getElementById("grupo").style.display = "none";
+                document.getElementById("horarios").style.display = "block";
+                document.getElementById("exit").style.display = "none";
+                document.getElementById("tabla").style.display = "none";
+                document.getElementById("tabla1").style.display = "none";
+                document.getElementById("tabla1").style.display = "none";
+                document.getElementById('tabla2').style.display ='none';
+              }
+   },
+
+   out: function() {
+      if(window.localStorage.getItem("user") != null){
+                document.getElementById("login").style.display = "none";
+                document.getElementById("grupo").style.display = "none";
+                document.getElementById("horarios").style.display = "none";
+                document.getElementById("exit").style.display = "block";
+                document.getElementById("tabla").style.display = "none";
+                document.getElementById("tabla1").style.display = "none";
+                document.getElementById("tabla1").style.display = "none";
+                document.getElementById('tabla2').style.display ='none';
+      } else {
+        alert("No ha iniciado sesión");
+      }
    },
 
    siguiente: function() {
@@ -344,7 +405,7 @@ var app = {
     document.getElementById('tabla2').style.display ='none';
    },
 
-   rotacion: function () {
+   /*rotacion: function () {
     var ancho = document.documentElement.clientWidth;
     var header = document.getElementById("header").className;
 
@@ -355,7 +416,7 @@ var app = {
     }
 
 
-   }
+   }*/
 
 };
 

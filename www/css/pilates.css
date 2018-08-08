@@ -1,42 +1,11 @@
-body {
-	background-color: #DADAD9;
-	height:100%;  
-	margin-bottom: 50px;
-}
-
-div{
-	background-color: #FFFFFF;
-	border-radius: 30px;
-	height: 100%; 
-	margin-top: 20px;
-    -webkit-box-shadow: 2px 9px 5px 0px rgba(0,0,0,0.41);
-    -moz-box-shadow: 2px 9px 5px 0px rgba(0,0,0,0.41);
-     box-shadow: 2px 9px 5px 0px rgba(0,0,0,0.41);
-
-     font-family: 'Open Sans', sans-serif;
-
-}
-
-.horarios{
-	height: 100%;
-}
-.header{
-	background-color:#000AA2;
-	width: 100%;
-	border-radius: 10px;
-
-}
-
-.header-big{
-	background-color: #000AA2;
-	width: 100%;
-	border-radius: 10px; 
-	height: 100px;
-}
-
 
 .login {
 	display: none;
+	padding-left: 15px;
+}
+
+.entrar {
+	text-align: center;
 }
 
 .horarios {
@@ -44,6 +13,10 @@ div{
 }
 
 .grupo {
+	display: none;
+	padding-left: 5%;
+}
+.salir {
 	display: none;
 }
 
@@ -57,98 +30,30 @@ div{
 
 .tabla1 {
 	display: none;
-	font-size: small;
 }
+
+
 
 .tabla2 {
 	display: none;
-	font-size: small;
 }
 
-
-.titulo {
-  width: 100%;
-  color: #FFFFFF;  
-  margin: 10px;
+.brand-logo {
+	font-size: 25px!important;
+	padding-left: 5%!important;
 }
 
-#bienvenido{
-	 margin: 20px;
+#bienvenido {
+	text-align: center;
+
 }
 
-#hora{
-	 margin: 20px;
-	 margin-top: 10px;
-}
-
-button {
-	background: #000AA2 url(overlay.png) repeat-x;
-	display: inline-block;
-	padding: 5px 10px 6px;
-	color: #fff;
-	text-decoration: none;
-	-moz-border-radius: 6px;
-	-webkit-border-radius: 6px;
-	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.6);
-	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.6);
-	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
-	border-bottom: 1px solid rgba(0,0,0,0.25);
-	position: relative;
-	cursor: pointer;
-	margin: 20px;
-}
-
- a { 
- 	text-decoration: none; 
- 	color: #000AA2;
- 	margin: 22px; 
- }
- a:hover { font-weight: bold; }
-
- table {
- 	width:100%;
- }
-
-th, td {
-   text-align: left;
-   vertical-align: top;
-}
-
-.pasar {
-	float: right;
-}
-
-p {
-	margin: 20px;
-}
-
-#add{
-	margin: 3px;
-}
-
-#salir {
-	margin: 3px;
+.volver{
+	margin-right: 10px;
 	margin-bottom: 10px;
 }
 
-img {
-
-	margin-top: 7px;
-	margin-right: 10px;
-	margin-bottom: 5px;
-	float: left;
-
-    border-radius:10px;
-
+.pasar{
+	margin-left: 10px;
+	margin-bottom: 10px;
 }
-
-.registro{
-	margin: 20px;
-}
-
-.user, .password {
-  margin-left: 20px;
-  margin-bottom: 5px;
-}
- 
-
