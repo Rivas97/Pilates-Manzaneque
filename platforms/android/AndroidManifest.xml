@@ -10,7 +10,7 @@
             </intent-filter>
         </activity>
     </application>
-    <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="25" />
+    <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="26" />
     <uses-permission android:name="android.permission.READ_CALENDAR" />
     <uses-permission android:name="android.permission.WRITE_CALENDAR" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />

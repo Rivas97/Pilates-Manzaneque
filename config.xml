@@ -7,6 +7,7 @@
     <author email="fernando.riv.m@gmail.com" href="http://pilatesmanzaneque.es">
         Fernando Rivas
     </author>
+    <preference name=”android-minSdkVersion” value=”26″ />
     <content src="index.html" />
     <allow-navigation href="*" />
     <allow-intent href="*" />
