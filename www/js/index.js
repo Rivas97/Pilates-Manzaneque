@@ -369,14 +369,62 @@ var app = {
 
    cuenta: function(){
         if(window.localStorage.getItem("user") != null){
-                document.getElementById("login").style.display = "none";
-                document.getElementById("grupo").style.display = "none";
-                document.getElementById("horarios").style.display = "block";
-                document.getElementById("exit").style.display = "none";
-                document.getElementById("tabla").style.display = "none";
-                document.getElementById("tabla1").style.display = "none";
-                document.getElementById("tabla1").style.display = "none";
-                document.getElementById('tabla2').style.display ='none';
+                    var peticion = 'http://pilatesmanzaneque.es/login.php?user=' + window.localStorage.getItem("user") +'&password=' + window.localStorage.getItem("password");
+
+                    $.getJSON(peticion,function(data){
+                        console.log(JSON.stringify(data));
+
+                        $(data).each(function(index, data) {
+                            if (data.usuario){
+                              document.getElementById("bienvenido").innerHTML = "Hola " +data.nombre + " " + data.apellido;
+
+                              if(data.diahora1 =="") {
+                                document.getElementById("dia1").style.display = "none";
+                              } else{
+                                document.getElementById("dia1").style.display = "block";
+                              }
+                              document.getElementById("dia1").innerHTML = app.dia(data.diahora1);
+                              document.getElementById("dia1").title = app.link(data.diahora1,user);
+
+                              if(data.diahora2 =="") {
+                                document.getElementById("dia2").style.display = "none";
+                              } else{
+                                document.getElementById("dia2").style.display = "block";
+                              }
+                              document.getElementById("dia2").innerHTML = app.dia(data.diahora2);
+                              document.getElementById("dia2").title = app.link(data.diahora2,user);
+
+
+                              if(data.diahora3 =="") {
+                                document.getElementById("dia3").style.display = "none";
+                              } else{
+                                document.getElementById("dia3").style.display = "block";
+                              }
+                              document.getElementById("dia3").innerHTML = app.dia(data.diahora3);
+                              document.getElementById("dia3").title = app.link(data.diahora3,user);
+
+
+                              if(data.diahora4 =="") {
+                                document.getElementById("dia4").style.display = "none";
+                              } else{
+                                document.getElementById("dia4").style.display = "block";
+                              }
+                              document.getElementById("dia4").innerHTML = app.dia(data.diahora4);
+                              document.getElementById("dia4").title = app.link(data.diahora4,user);
+
+                              document.getElementById("login").style.display = "none";
+                              document.getElementById("grupo").style.display = "none";
+                              document.getElementById("horarios").style.display = "block";
+                              document.getElementById("exit").style.display = "none";
+                              document.getElementById("tabla").style.display = "none";
+                              document.getElementById("tabla1").style.display = "none";
+                              document.getElementById("tabla1").style.display = "none";
+                              document.getElementById('tabla2').style.display ='none';
+
+                            } 
+
+                        });
+                    });
               }
    },
 
