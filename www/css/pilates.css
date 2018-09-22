@@ -26,7 +26,14 @@
 
 .tabla {
 	display: none;
+	height: 400px;
+	width: 100%;
+	overflow: auto;
 }
+
+.tabla td { 
+	text-align: center;
+ }
 
 .tabla1 {
 	display: none;
