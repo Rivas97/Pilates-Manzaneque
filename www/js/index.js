@@ -46,9 +46,6 @@ var app = {
     var volver = document.querySelector("#volver");
     volver.addEventListener('click', this.volver, false);
 
-    var back = document.querySelector("#back");
-    back.addEventListener('click', this.volver, false);
-
     var add = document.querySelector("#add");
     add.addEventListener('click', this.add, false);
 
@@ -355,7 +352,7 @@ var app = {
         ancho = document.documentElement.clientWidth;
 
         if (ancho <= 500) {
-            document.getElementById("tabla1").style.display = "block";
+            document.getElementById("tabla").style.display = "block";
         }else{
             document.getElementById("tabla").style.display = "block";
         }
