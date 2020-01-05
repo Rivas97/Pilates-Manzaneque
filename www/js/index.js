@@ -82,7 +82,8 @@ var app = {
     app.horario(user,password);
   },
 
-
+  //prueba
+  
   horario: function(user,password) {
     var peticion = 'http://pilatesmanzaneque.es/login.php?user=' + user +'&password=' + password;
 
