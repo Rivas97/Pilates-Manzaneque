@@ -8,7 +8,7 @@
         Fernando Rivas
     </author>
     <content src="index.html" />
-    <preference name="android-targetSdkVersion"    value="28" />
+    <preference name="android-targetSdkVersion"    value="29" />
     <preference name="android-minSdkVersion" value="19" />
     <allow-navigation href="*" />
     <allow-intent href="*" />
